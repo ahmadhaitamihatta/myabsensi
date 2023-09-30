@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gold"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/gold"
+        android:paddingStart="15dp"
+        android:paddingRight="15dp">
+        <TextView
+            android:layout_above="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="40dp"
+            android:text="Welcome to MyAbsensi"
+            android:fontFamily="@font/garabd"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            tools:ignore="UnknownId" />
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/garabd"
+            android:textColor="@color/black"
+            android:layout_marginTop="40dp"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:text="..."/>
+        <ImageButton
+            android:id="@+id/imageLogout"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="320dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gold"
+            app:srcCompat="@drawable/ic_logout"
+            app:tint="@color/black"/>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_top_grey"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_bottom_right"
+                android:elevation="5dp"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_absensi"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_absensi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="absensi"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_bottom_left"
+                android:elevation="5dp"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_list"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="lIST DATA"
+                    android:id="@+id/btn_listdata"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_top_right"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/notepad" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="catatan"
+                    android:id="@+id/btn_catatan"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/background_top_left"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="65dp"
+                    android:layout_height="90dp"
+                    android:src="@drawable/ic_info" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="info app"
+                    android:id="@+id/btn_info"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "135349305547",
+    "project_id": "myabsensi-c1827",
+    "storage_bucket": "myabsensi-c1827.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135349305547:android:b80db50665df6905af5b4e",
+        "android_client_info": {
+          "package_name": "com.lisau.myabsensi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-DFdcP_ynWrvqHTbxbY49Ap248Rbk4CY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
