@@ -14,27 +14,35 @@ import com.lisau.myabsensi.model.User;
 
 import java.util.List;
 
-import javax.annotation.Nonnull;
-
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
-    private Context context;
-    private List<User> list;
-    private Dialog dialog;
+    private Context mContext;
+    private List<User> userList;
 
-    public interface Dialog{
-        void onClick(int pos);
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+
+        //item dari row_user
+        public TextView id, nama, nim, tanggal, status;
+
+        public MyViewHolder(View view) {
+
+            super(view);
+
+            //item dari row_user
+            id = view.findViewById(R.id.id_row_user);
+            nama = view.findViewById(R.id.nama_row_user);
+            nim = view.findViewById(R.id.nim_row_user);
+            tanggal = view.findViewById(R.id.tanggal_row_user);
+            status = view.findViewById(R.id.status_row_user);
+        }
     }
 
-    public void setDialog(Dialog dialog) {
-        this.dialog = dialog;
+    public UserAdapter(Context context, List<User> userList) {
+
+        mContext = context;
+
+        this.userList = userList;
     }
 
-    public UserAdapter(Context context, List<User> list){
-        this.context = context;
-        this.list = list;
-    }
-
-    @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_row_user, parent, false);
@@ -42,32 +50,25 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.name.setText(list.get(position).getName());
-        holder.nim.setText(list.get(position).getNim());
-        holder.jurusan.setText(list.get(position).getJurusan());
+    public void onBindViewHolder( final MyViewHolder holder,  final int position) {
+        final User user = userList.get(position);
+        holder.id.setText(user.getId());
+        holder.nama.setText(user.getNama());
+        holder.nim.setText(user.getNim());
+        holder.tanggal.setText(user.getTanggal());
+
+        if(user.getStatus().equals("1")){
+
+            holder.status.setText("  Hadir  ");
+
+        }else if(user.getStatus().equals("0")){
+
+            holder.status.setText("  Tidak Hadir  ");
+
+        }
+
     }
 
     @Override
-    public int getItemCount() {
-        return list.size();
-    }
-
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView name;
-        TextView nim;
-        TextView jurusan;
-
-        public MyViewHolder(@Nonnull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.name);
-            nim = itemView.findViewById(R.id.nim);
-            jurusan = itemView.findViewById(R.id.jurusan);
-            itemView.setOnClickListener(v -> {
-                if (dialog!=null){
-                    dialog.onClick(getLayoutPosition());
-                }
-            });
-        }
-    }
+public int getItemCount() { return userList.size();}
 }

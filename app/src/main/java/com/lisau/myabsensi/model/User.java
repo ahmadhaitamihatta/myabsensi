@@ -1,16 +1,22 @@
 package com.lisau.myabsensi.model;
 
 public class User {
-    private String id, name, nim, jurusan;
+    private String id;
+    private String nim;
+    private String nama;
+    private String tanggal;
+    private String jam;
+    private String status;
+    private String telat;
 
-
-    private User(){
-    }
-
-    public User(String name, String nim, String jurusan){
-        this.name = name;
+    public User(String id, String nim, String nama, String tanggal, String jam, String status, String telat){
+        this.id = id;
         this.nim = nim;
-        this.jurusan = jurusan;
+        this.nama = nama;
+        this.tanggal = tanggal;
+        this.jam = jam;
+        this.status = status;
+        this.telat = telat;
     }
 
     public String getId() {
@@ -21,14 +27,6 @@ public class User {
         this.id = id;
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getNim(){
         return nim;
     }
@@ -37,11 +35,33 @@ public class User {
         this.nim = nim;
     }
 
-    public String getJurusan(){
-        return jurusan;
+    public String getNama(){
+        return nama;
     }
 
-    public void setJurusan(String jurusan) {
-        this.jurusan = jurusan;
+    public void setNama(String nama) {
+        this.nama = nama;
     }
+
+    public String getTanggal(){
+        return tanggal;
+    }
+
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
+    }
+    public String getJam() { return jam; }
+    public void setJam(String jam) {this.jam = jam; }
+    public String getStatus() { return status; }
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    public String getTelat() {
+        return telat;
+    }
+    public void setTelat(String telat) {
+        this.telat = telat;
+    }
+
 }
+

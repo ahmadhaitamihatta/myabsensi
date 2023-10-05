@@ -3,7 +3,7 @@ package com.lisau.myabsensi;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -12,7 +12,6 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseUser firebaseUser;
@@ -21,14 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private AppCompatButton btnAbsensi;
     private AppCompatButton btnListdata;
     private AppCompatButton btnInfoAplikasi;
-    private AppCompatButton btnCatatan;
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.action_menu, menu);
-        return true;
-    }
+    private AppCompatButton btnDataCloud;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         btnAbsensi = findViewById(R.id.btn_absensi);
         btnListdata = findViewById(R.id.btn_listdata);
         btnInfoAplikasi = findViewById(R.id.btn_info);
-        btnCatatan = findViewById(R.id.btn_catatan);
+        btnDataCloud = findViewById(R.id.btn_datacloud);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -62,15 +54,20 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnListdata.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), ListDataActivity.class));
+            startActivity(new Intent(MainActivity.this, ListDataActivity.class));
         });
 
         btnInfoAplikasi.setOnClickListener(v -> {
             startActivity(new Intent(getApplicationContext(), InfoAplikasiActivity.class));
         });
 
-        btnCatatan.setOnClickListener(v ->  {
-            startActivity(new Intent(getApplicationContext(), CatatanActivity.class));
+        btnDataCloud.setOnClickListener(new View.OnClickListener()  {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UserCloudActivity.class));
+
+            }
         });
+
     }
 }

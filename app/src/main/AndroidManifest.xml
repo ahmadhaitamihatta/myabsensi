@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.lisau.myabsensi">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,12 +15,15 @@
         android:label="MyAbsensi"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Myabsensi"
-        tools:targetApi="31">
+        android:theme="@style/Theme.Myabsensi">
         <activity
-            android:name=".CatatanActivity"
+            android:name=".UserCloudActivity"
             android:exported="true"
-            android:label="Catatan"/>
+            android:label="Daftar Hadir"/>
+        <activity
+            android:name=".ScanActivity"
+            android:exported="true"
+            android:label="Scan" />
         <activity
             android:name=".InfoAplikasiActivity"
             android:exported="true"
@@ -23,7 +31,7 @@
         <activity
             android:name=".ListDataActivity"
             android:exported="true"
-            android:label="List Data" />
+            android:label="List Hadir" />
         <activity
             android:name=".AbsenActivity"
             android:exported="true"
@@ -34,8 +42,7 @@
             android:label="Register" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="Home" />
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
