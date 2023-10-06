@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginActivity extends AppCompatActivity {
+    private TextView txtLupaPassword;
     private EditText editEmail, editPassword;
     private Button btnLogin, btnRegister;
     private SignInButton btnGoogle;
@@ -44,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         btnRegister = findViewById(R.id.btn_register);
         btnGoogle = findViewById(R.id.btn_google);
+        txtLupaPassword = findViewById(R.id.lupa_password);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -62,6 +65,13 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Silahkan isi semua data!", Toast.LENGTH_SHORT).show();
             }
         });
+        txtLupaPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, LupaPasswordActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+
         btnGoogle.setOnClickListener(v -> {
             googlesignIn();
         });

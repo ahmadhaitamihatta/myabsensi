@@ -17,9 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Myabsensi">
         <activity
-            android:name=".UserCloudActivity"
+            android:name=".LupaPasswordActivity"
             android:exported="true"
-            android:label="Daftar Hadir"/>
+            android:label="Reset Password"/>
+        <activity
+            android:name=".UserCloudActivity"
+            android:exported="true" />
         <activity
             android:name=".ScanActivity"
             android:exported="true"
@@ -30,8 +33,7 @@
             android:label="Info Aplikasi" />
         <activity
             android:name=".ListDataActivity"
-            android:exported="true"
-            android:label="List Hadir" />
+            android:exported="true" />
         <activity
             android:name=".AbsenActivity"
             android:exported="true"
@@ -42,7 +44,8 @@
             android:label="Register" />
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Home" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">

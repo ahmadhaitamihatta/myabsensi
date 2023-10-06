@@ -43,7 +43,6 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         mScannerView = new ZXingScannerView(this);
         setContentView(mScannerView);
-
         setTitle("Scan");
 
         //Inisialisasi kelas database
@@ -65,7 +64,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         int permissionCheckStorage = ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (permissionCheckStorage == PackageManager.PERMISSION_DENIED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
+                requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission. INTERNET}, 100);
             }
         }
     }
@@ -110,7 +109,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         Log.v("SIMPAN INI", uid+ nim+nama+tanggal+jam);
 
         //Data absensi akan di cek terlebih dahulu
-        boolean cekSimpan = db.TambahData(uid, nim, nama, tanggal, jam, "Hadir", "Tidak");
+        boolean cekSimpan = db.TambahData(uid, nim, nama, tanggal, jam, "Hadir", "Tidak Hadir");
 
         if (cekSimpan) {
 

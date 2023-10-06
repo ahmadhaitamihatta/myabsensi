@@ -11,7 +11,7 @@ public class Database extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     //Nama Database Local
-    private static final String DATABASE_NAME = "absen.db";
+    private static final String DATABASE_NAME = "absen";
 
     //Nama Tabel Local
     private static final String TABLE_NAME = "absensi";
@@ -99,7 +99,7 @@ public class Database extends SQLiteOpenHelper {
     }
 
     //Prosedure Ubah Data
-    public boolean UbahData(String id, String nim, String nama, String tanggal, String jam, String status) {
+    public boolean UbahData(String id, String nim, String nama, String tanggal, String jam, String status, String telat) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(ID, id);
@@ -108,6 +108,7 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put(TANGGAL, tanggal);
         contentValues.put(JAM, jam);
         contentValues.put(STATUS, status);
+        contentValues.put(TELAT, telat);
         db.update(TABLE_NAME, contentValues, "id = ?", new String[]{id});
         return true;
     }

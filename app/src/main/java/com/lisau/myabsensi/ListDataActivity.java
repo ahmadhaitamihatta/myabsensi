@@ -26,7 +26,7 @@ public class ListDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
-        setTitle("List Data");
+        setTitle("List Kehadiran");
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Tunggu sebentar...");

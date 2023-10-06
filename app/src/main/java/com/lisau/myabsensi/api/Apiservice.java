@@ -19,8 +19,8 @@ public interface Apiservice {
     );
 
     //TAMPIL DATA DENGAN ID
-//    @GET("uri")
-//    Call<NamaKelas> getFunction(@Query("param") String param);
+    @GET("uri")
+    Call<Users> getFunction(@Query("param") String param);
 
     //SIMPAN DATA
     @FormUrlEncoded

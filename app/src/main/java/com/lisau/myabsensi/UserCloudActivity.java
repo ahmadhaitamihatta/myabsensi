@@ -36,7 +36,7 @@ public class UserCloudActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_cloud);
 
-        setTitle("Daftar Hadir Cloud");
+        setTitle("Cloud Daftar Hadir");
 
         recyclerView = findViewById(R.id.user_cloud);
 

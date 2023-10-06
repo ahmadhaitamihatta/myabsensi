@@ -125,7 +125,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Data Cloud"
+                    android:text="Cloud Data"
                     android:id="@+id/btn_datacloud"/>
             </LinearLayout>
 
